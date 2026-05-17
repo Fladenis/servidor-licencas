@@ -1,15 +1,15 @@
-vfrom flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return jsonify({"status": "online", "message": "Servidor TecnoBots funcionando!"})
+    return 'Servidor online!'
 
 @app.route('/api/criar', methods=['POST'])
-def criar_licenca():
-    return jsonify({"success": True, "chave": "TESTE-1234", "message": "Endpoint /api/criar funcionando!"})
+def criar():
+    return 'OK'
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 10000))
